@@ -28,6 +28,7 @@ b {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: all .3s ease;
 }
 
 nav {
@@ -115,6 +116,11 @@ nav {
 a {
     list-style: none;
     color: #f00;
+    transition: all .3s ease;
+}
+
+a:hover {
+    text-shadow: 0 0 13px #f00;
 }
 
 .off-screen-menu {
@@ -166,6 +172,10 @@ a {
     margin: 20% 0;
 }
 
+.actual-menu {
+    display: none;
+}
+
 .off-screen-menu ul li a{
     color: white;
     text-decoration: none;
@@ -178,14 +188,12 @@ a {
 .header {
     width: 100%;
     height: 70vh;
-    display: relative;
 }
 
 .pfp {
     width: 70%;
     height: auto;
     border-radius: 8px;
-    position: relative;
     margin: 15px;
     z-index: 1;
     position: absolute;
@@ -196,7 +204,7 @@ a {
 .pfp img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 0 20px #00000067;
 }
 
@@ -204,7 +212,6 @@ a {
     padding: 0 15px;
     width: 50%;
     height: auto;
-    position: relative;
     margin: 15px;
     top: 30%;
     left: 34%;
@@ -217,19 +224,8 @@ a {
     backdrop-filter: blur(5px) saturate(150%); /* frosted glass magic */
     -webkit-backdrop-filter: blur(7px) saturate(150%); /* Safari support */
     border-radius: 12px;
-    cursor: pointer;
     transition: all 0.3s ease;
     border: 1px solid #ffffff49;
-}
-
-.text::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), #ffffff00);
-    opacity: 0.5;
-    pointer-events: none;
 }
 
 .text h1 {
@@ -265,7 +261,6 @@ a {
     margin-bottom: 100px;
     background: linear-gradient(90deg, #ffffff25, #00000000, #00000000);
     border-radius: 12px;
-    cursor: pointer;
     transition: all 0.3s ease;
     border: 1px solid #ffffff25;
 }
@@ -302,13 +297,12 @@ a {
     font-weight: 500;
     letter-spacing: 0.5px;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
-    cursor: pointer;
     transition: all 0.3s ease;
     margin-bottom: 100px;
 }
 
 .skills {
-    background: linear-gradient(145deg, #ffffff49, #00000000, #00000000, #ffffff49);
+    background: linear-gradient(145deg, #ffffff49, #00000000, #00000000, #ffffff17);
     border-radius: 12px;
     padding: 8px;
     margin: 0 auto;
@@ -322,7 +316,8 @@ a {
     border-radius: 12px;
     padding: 3px 1px;
     background: linear-gradient(90deg, #ffffff7c, #00000000, #00000000);
-    margin: 15px 0;
+    margin: 15px auto;
+    transition: all .3s ease;
 }
 
 .character {
@@ -341,6 +336,7 @@ a {
 .scale-measure {
     height: inherit;
     background: linear-gradient(90deg, #ff7b00, #ffd000);
+    box-shadow: 0 0 13px #ff7b00;
     border-radius: inherit;
 }
 
@@ -353,7 +349,7 @@ a {
 }
 
 #js {
-    width: 48%;
+    width: 54%;
 }
 
 #git {
@@ -378,7 +374,6 @@ a {
     font-weight: 500;
     letter-spacing: 0.5px;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 
@@ -402,7 +397,7 @@ a {
 }
 
 .icons {
-    background: linear-gradient(#b4b4b4, #fff);
+    background: #b4b4b4;
     width: 90%;
     margin: 0 auto;
     border-radius: 12px;
@@ -410,6 +405,7 @@ a {
     display: flex;
     padding: 10px 0;
     box-shadow: 0 0 40px #ffffff6e;
+    transition: all .3s ease;
 }
 
 .icons a {
@@ -419,17 +415,8 @@ a {
 .contact {
     transition: all 0.3s ease;
     padding-bottom: 10px;
-    /* gradient */
-    background: rgba(255, 255, 255, 0.1); /* semi-transparent layer */
-    border: 1px solid rgba(255, 255, 255, 0.13); /* subtle edge */
-    backdrop-filter: blur(5px) saturate(150%); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(7px) saturate(150%); /* Safari support */
-    border-radius: 12px;
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
-    cursor: pointer;
+    background: linear-gradient(145deg, #ffffff49, #00000000, #00000000);
+    border: 1px solid #ffffff49;
     transition: all 0.3s ease;
     text-align: center;
 }
@@ -439,6 +426,14 @@ a {
     height: auto;
     margin: 0 auto;
     animation: 2s bounce infinite;
+}
+
+footer {
+    text-align: center;
+}
+
+footer p {
+    font-size: 16px;
 }
 
 /* button:hover {

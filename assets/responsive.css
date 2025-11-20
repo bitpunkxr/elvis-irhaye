@@ -1,0 +1,156 @@
+@media (min-width: 1024px) {
+    nav {
+        display: none;
+    }
+
+    .actual-menu {
+        display: flex;
+        background: linear-gradient(145deg, #1d1d1d49, #ffffff1e, #ffffff1e, #1d1d1d49);
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+        transition: all .3s ease;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+    }
+
+    .actual-menu ul {
+        display: flex;
+        width: 100%;
+    }
+
+    .actual-menu ul li {
+        margin: 0 auto;
+    }
+
+    .actual-menu a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .actual-menu a:hover {
+        color: #ff7b00;
+        text-shadow: 0 0 13px #ff7b00;
+    }
+
+    .hero-section {
+        padding-top: 60px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    b:hover {
+        text-shadow: 0 0 13px #ff7b00;
+    }
+
+    .header {
+        height: fit-content;
+        display: flex;
+    }
+
+    .off-screen-menu {
+        display: none;
+    }
+
+    .pfp {
+        width: 40%;
+        animation: none;
+        position: relative;
+        opacity: 100%;
+        margin: 30px 0 30px auto;
+        float: left;
+    }
+
+    .pfp img {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .text {
+        animation: none;
+        position: relative;
+        opacity: 100%;
+        margin: 0;
+        animation: none;
+        top: 0;
+        left: 0;
+        margin: 30px auto 30px 0;
+        text-align: center;
+        display: flex;
+        background: linear-gradient(90deg, #ffffff49, #00000000, #00000000);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .text div {
+        margin: auto;
+    }
+
+    .about {
+        width: 70%;
+        opacity: 0.8;
+        transition: all .3s ease;
+    }
+
+    .about:hover {
+        opacity: 1;
+    }
+
+    .about p:nth-child(5) {
+        text-align: inherit;
+    }
+
+    .skills {
+        width: 70%;
+        opacity: 0.8;
+        transition: all .3s ease;
+    }
+
+    .skills:hover {
+        opacity: 1;
+    }
+
+    .measure {
+        width: 60%;
+    }
+
+    .measure:hover {
+        width: 90%;
+        color: #ff7b00;
+    }
+
+    .project {
+        width: 70%;
+    }
+
+    .icons img {
+        width: 50px;
+    }
+
+    .icons {
+        width: 50%;
+        margin-bottom: 100px;
+    }
+
+    .icons:hover {
+        background: #fff;
+        box-shadow: 0 0 50px #ffffffa4;
+        width: 70%;
+        transform: scale(1.1);
+    }
+
+    .contact {
+        opacity: 0.8;
+    }
+
+    .contact:hover {
+        opacity: 1;
+    }
+}
