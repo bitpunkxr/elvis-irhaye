@@ -3,12 +3,12 @@ body, html {
     padding: 0;
     scroll-behavior: smooth;
     scrollbar-width: none;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body {
-    background: #000;
     color: #fff;
+    background: #000;
 }
 
 h1 {
@@ -24,7 +24,7 @@ p {
 }
 
 b {
-    background: linear-gradient(90deg, rgb(255, 0, 140), #c8ff00, rgb(0, 247, 255));
+    background: linear-gradient(90deg, #ff7b00, #ffd000);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -43,10 +43,11 @@ nav {
     border-bottom-left-radius: 50%;
     animation: 1s slide forwards;
     animation-delay: 1.3s;
+    /* gradient */
     background: rgba(255, 255, 255, 0.1); /* semi-transparent layer */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* subtle edge */
-    backdrop-filter: blur(12px) saturate(150%); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(12px) saturate(150%); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.13); /* subtle edge */
+    backdrop-filter: blur(5px) saturate(150%); /* frosted glass magic */
+    -webkit-backdrop-filter: blur(7px) saturate(150%); /* Safari support */
     border-radius: 12px;
     color: #fff;
     font-weight: 500;
@@ -54,6 +55,16 @@ nav {
     text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.nav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), #ffffff00);
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .ham-menu {
@@ -117,16 +128,27 @@ a {
     align-items: center;
     text-align: center;
     font-size: 1.5rem;
-    transition: .3s ease;
     z-index: 10;
+    /* gradient */
     background: rgba(255, 255, 255, 0.1); /* semi-transparent layer */
-    backdrop-filter: blur(12px) saturate(150%); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(12px) saturate(150%); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.13); /* subtle edge */
+    backdrop-filter: blur(25px); /* frosted glass magic */
+    -webkit-backdrop-filter: blur(25px); /* Safari support */
+    color: #fff;
     font-weight: 500;
     letter-spacing: 0.5px;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.off-screen-menu::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), #ffffff00);
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .off-screen-menu.active {
@@ -191,17 +213,23 @@ a {
     opacity: 0;
     animation: 3s zoom2 forwards;
     /* gradient */
-    background: rgba(255, 255, 255, 0.1); /* semi-transparent layer */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* subtle edge */
-    backdrop-filter: blur(12px) saturate(150%); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(12px) saturate(150%); /* Safari support */
+    background: linear-gradient(145deg, #ffffff49, #00000000, #00000000);
+    backdrop-filter: blur(5px) saturate(150%); /* frosted glass magic */
+    -webkit-backdrop-filter: blur(7px) saturate(150%); /* Safari support */
     border-radius: 12px;
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 1px solid #ffffff49;
+}
+
+.text::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), #ffffff00);
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .text h1 {
@@ -232,13 +260,23 @@ a {
 
 .about {
     margin: 0 auto;
+    width: 90%;
     padding: 5px;
-    margin-bottom: 30px;
-    background: linear-gradient(#00000000, #1d1d1d, #1d1d1d, #1d1d1d, #1d1d1d, #1d1d1d, #1d1d1d, #1d1d1d, #1d1d1d, #1d1d1d, #1d1d1d, #1d1d1d, #00000000);
+    margin-bottom: 100px;
+    background: linear-gradient(90deg, #ffffff25, #00000000, #00000000);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #ffffff25;
 }
 
 .heading {
     margin-left: 30px;
+    background: linear-gradient(90deg, #ff7b00, #ffd000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #ff7b004d;
 }
 
 .article {
@@ -254,10 +292,9 @@ a {
     border-radius: 12px;
 }
 
-.recent {
+.project {
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1); /* semi-transparent layer */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* subtle edge */
+    border: 1px solid #00000000; /* subtle edge */
     backdrop-filter: blur(12px) saturate(150%); /* frosted glass magic */
     -webkit-backdrop-filter: blur(12px) saturate(150%); /* Safari support */
     border-radius: 12px;
@@ -267,54 +304,145 @@ a {
     text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 100px;
 }
 
-.recent .article {
+.skills {
+    background: linear-gradient(145deg, #ffffff49, #00000000, #00000000, #ffffff49);
+    border-radius: 12px;
+    padding: 8px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    border: 1px solid #ffffff49;
+    width: 90%;
+}
+
+.measure {
+    width: 100%;
+    border-radius: 12px;
+    padding: 3px 1px;
+    background: linear-gradient(90deg, #ffffff7c, #00000000, #00000000);
+    margin: 15px 0;
+}
+
+.character {
+    width: fit-content;
+    margin: auto;
+}
+
+.scale {
+    width: 95%;
+    background: #ffffff9c;
+    height: 5px;
+    border-radius: 12px;
+    margin: auto;
+}
+
+.scale-measure {
+    height: inherit;
+    background: linear-gradient(90deg, #ff7b00, #ffd000);
+    border-radius: inherit;
+}
+
+#html {
+    width: 88%;
+}
+
+#css {
+    width: 94%;
+}
+
+#js {
+    width: 48%;
+}
+
+#git {
+    width: 70%;
+}
+
+#bat {
+    width: 45%;
+}
+
+.work {
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+    /* gradient */
+    background: rgba(255, 255, 255, 0.2); /* semi-transparent layer */
+    border: 1px solid rgba(255, 255, 255, 0.13); /* subtle edge */
+    backdrop-filter: blur(5px) saturate(150%); /* frosted glass magic */
+    -webkit-backdrop-filter: blur(7px) saturate(150%); /* Safari support */
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.work h1 {
+    font-size: 1.8rem;
+}
+
+.work-img {
+    width: 100%;
+    top: 0;
+}
+
+.work-img img {
+    width: 100%;
+    position: relative;
+    border-radius: 12px;
+}
+
+.work-txt {
+    padding: 30px;
+}
+
+.icons {
+    background: linear-gradient(#b4b4b4, #fff);
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 12px;
+    gap: 4px;
+    display: flex;
+    padding: 10px 0;
+    box-shadow: 0 0 40px #ffffff6e;
+}
+
+.icons a {
+    margin: 0 auto;
+}
+
+.contact {
+    transition: all 0.3s ease;
+    padding-bottom: 10px;
+    /* gradient */
+    background: rgba(255, 255, 255, 0.1); /* semi-transparent layer */
+    border: 1px solid rgba(255, 255, 255, 0.13); /* subtle edge */
+    backdrop-filter: blur(5px) saturate(150%); /* frosted glass magic */
+    -webkit-backdrop-filter: blur(7px) saturate(150%); /* Safari support */
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
+    cursor: pointer;
+    transition: all 0.3s ease;
     text-align: center;
 }
 
-#grad {
-    background: rgba(255, 255, 255, 0.1); /* semi-transparent layer */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* subtle edge */
-    backdrop-filter: blur(12px) saturate(150%); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(12px) saturate(150%); /* Safari support */
-    border-radius: 12px;
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
-    cursor: pointer;
-    transition: all 0.3s ease;
+.icons img {
+    width: 35px;
+    height: auto;
+    margin: 0 auto;
+    animation: 2s bounce infinite;
 }
 
-button {
-    background: rgba(255, 255, 255, 0.1); /* semi-transparent layer */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* subtle edge */
-    backdrop-filter: blur(12px) saturate(150%); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(12px) saturate(150%); /* Safari support */
-    border-radius: 12px;
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* Add a glassy glow when hovering */
-button:hover {
+/* button:hover {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 20px rgba(0,0,0,0.25),
               inset 0 1px 2px rgba(255,255,255,0.3);
-}
-
-
-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(145deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
-  opacity: 0.5;
-  pointer-events: none;
-}
+} */
