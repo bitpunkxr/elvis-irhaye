@@ -131,6 +131,10 @@
         width: 70%;
     }
 
+    .work-img img {
+        width: 40%;
+    }
+
     .icons img {
         width: 50px;
     }
