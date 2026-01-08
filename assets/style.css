@@ -214,6 +214,7 @@ a:hover {
 .text {
     padding: 0 15px;
     width: 50%;
+    max-width: 452px;
     height: auto;
     margin: 15px;
     top: 30%;
