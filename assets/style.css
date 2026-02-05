@@ -6,9 +6,31 @@ body, html {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+:root {
+    --bg: #000;
+    --text: #adadad;
+    --glass-gradient: linear-gradient(145deg, #ffffff49, #00000000, #00000000, #ffffff17);
+    --secondary-gradient: linear-gradient(90deg, #ff7b00, #ffd000);
+    --bd-filter: blur(5px) saturate(150%) brightness(1.5);
+    --glass-border: 1px solid #ffffff49;
+    --b-radius: 12px;
+    --trans: all .3s ease;
+    --pad: 0.7rem;
+    --glass-shadow: 0 1px 2px rgba(0, 0, 0, 0.466);
+}
+
 body {
+    color: var(--text);
+    background: var(--bg);
+}
+
+h1, h2, h3, p {
+    font-weight: 300;
+}
+
+strong {
     color: #fff;
-    background: #000;
+    font-weight: 600;
 }
 
 h1 {
@@ -24,15 +46,24 @@ p {
 }
 
 b {
-    background: linear-gradient(90deg, #ff7b00, #ffd000);
+    background: var(--secondary-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: all .3s ease;
+    transition: var(--trans);
+}
+
+#glass {
+    background: var(--glass-gradient);
+    backdrop-filter: var(--bd-filter);
+    -webkit-backdrop-filter: var(--bd-filter);
+    border-radius: var(--b-radius);
+    transition: var(--trans);
+    border: var(--glass-border);
 }
 
 nav {
-    padding: 0.7rem;
+    padding: var(--pad);
     display: flex;
     position: fixed;
     right: 0;
@@ -44,18 +75,6 @@ nav {
     border-bottom-left-radius: 50%;
     animation: 1s slide forwards;
     animation-delay: 1.3s;
-    /* gradient */
-    background: rgba(255, 255, 255, 0.1); /* semi-transparent layer */
-    border: 1px solid rgba(255, 255, 255, 0.13); /* subtle edge */
-    backdrop-filter: blur(5px) saturate(150%); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(7px) saturate(150%); /* Safari support */
-    border-radius: 12px;
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .nav::before {
@@ -63,7 +82,7 @@ nav {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), #ffffff00);
+    background: var(--glass-gradient);
     opacity: 0.5;
     pointer-events: none;
 }
@@ -135,17 +154,15 @@ a:hover {
     text-align: center;
     font-size: 1.5rem;
     z-index: 10;
-    /* gradient */
-    background: rgba(255, 255, 255, 0.1); /* semi-transparent layer */
-    border: 1px solid rgba(255, 255, 255, 0.13); /* subtle edge */
-    backdrop-filter: blur(25px); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(25px); /* Safari support */
+    background: rgba(0, 0, 0, 0.37); /* semi-transparent layer */
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(45px); /* Safari support */
     color: #fff;
     font-weight: 500;
     letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
+    text-shadow: var(--glass-shadow);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--trans);
     pointer-events: none;
 }
 
@@ -153,7 +170,7 @@ a:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), #ffffff00);
+    background: var(--glass-gradient);
     opacity: 0.5;
     pointer-events: none;
 }
@@ -174,13 +191,13 @@ a:hover {
     margin: 20% 0;
 }
 
-.actual-menu {
-    display: none;
-}
-
 .off-screen-menu ul li a{
     color: white;
     text-decoration: none;
+}
+
+.actual-menu {
+    display: none;
 }
 
 .hero-section {
@@ -223,13 +240,7 @@ a:hover {
     position: absolute;
     opacity: 0;
     animation: 3s zoom2 forwards;
-    /* gradient */
-    background: linear-gradient(145deg, #ffffff49, #00000000, #00000000);
-    backdrop-filter: blur(5px) saturate(150%); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(7px) saturate(150%); /* Safari support */
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    border: 1px solid #ffffff49;
+    border: var(--glass-border);
 }
 
 .text h1 {
@@ -263,15 +274,15 @@ a:hover {
     width: 90%;
     padding: 5px;
     margin-bottom: 100px;
-    background: linear-gradient(90deg, #ffffff25, #00000000, #00000000);
-    border-radius: 12px;
+    background: var(--glass-gradient);
+    border-radius: var(--b-radius);
     transition: all 0.3s ease;
     border: 1px solid #ffffff25;
 }
 
 .heading {
     margin-left: 30px;
-    background: linear-gradient(90deg, #ff7b00, #ffd000);
+    background: var(--secondary-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -293,103 +304,60 @@ a:hover {
 
 .project {
     margin: 0 auto;
-    border: 1px solid #00000000; /* subtle edge */
-    backdrop-filter: blur(12px) saturate(150%); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(12px) saturate(150%); /* Safari support */
-    border-radius: 12px;
-    color: #fff;
+    backdrop-filter: var(--bd-filter);
+    -webkit-backdrop-filter: var(--bd-filter);
+    border-radius: var(--b-radius);
+    color: var(--text);
     font-weight: 500;
     letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
-    transition: all 0.3s ease;
+    text-shadow: var(--glass-shadow);
+    transition: var(--trans);
     margin-bottom: 100px;
 }
 
 .skills {
-    background: linear-gradient(145deg, #ffffff49, #00000000, #00000000, #ffffff17);
-    border-radius: 12px;
+    background: var(--glass-gradient);
+    border-radius: var(--b-radius);
     padding: 8px;
     margin: 0 auto;
     margin-bottom: 100px;
-    border: 1px solid #ffffff49;
+    border: var(--glass-border);
     width: 90%;
 }
 
-.measure {
+.skills-img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: var(--b-radius);
     padding: 3px 1px;
     margin: 15px auto;
-    transition: all .3s ease;
-    gap: 30%;
+    transition: var(--trans);
+    gap: 25%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.character {
-    width: fit-content;
-    margin-left: 10%;
-}
-
-.measure img {
+.skills-img img {
     width: auto;
     height: 70px;
     display: inline;
     margin-bottom: 40px;
-}
-
-.scale {
-    width: 95%;
-    background: #ffffff9c;
-    height: 5px;
-    border-radius: 12px;
-    margin: auto;
-}
-
-.scale-measure {
-    height: inherit;
-    background: linear-gradient(90deg, #ff7b00, #ffd000);
-    box-shadow: 0 0 13px #ff7b00;
-    border-radius: inherit;
-}
-
-#html {
-    width: 99%;
-}
-
-#css {
-    width: 94%;
-}
-
-#js {
-    width: 85%;
-}
-
-#git {
-    width: 70%;
-}
-
-#bat {
-    width: 45%;
+    border: var(--glass-border);
+    padding: var(--pad);
+    border-radius: var(--b-radius);
 }
 
 .work {
     text-align: center;
     width: 95%;
     margin: 0 auto;
-    /* gradient */
-    background: rgba(255, 255, 255, 0.2); /* semi-transparent layer */
-    border: 1px solid rgba(255, 255, 255, 0.13); /* subtle edge */
-    backdrop-filter: blur(5px) saturate(150%); /* frosted glass magic */
-    -webkit-backdrop-filter: blur(7px) saturate(150%); /* Safari support */
-    border-radius: 12px;
+    border-radius: var(--b-radius);
     color: #fff;
     font-weight: 500;
     letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* “light leaking through” effect */
-    transition: all 0.3s ease;
+    text-shadow: var(--glass-shadow);
+    transition: var(--trans);
 }
 
 .work h1 {
@@ -405,7 +373,7 @@ a:hover {
 .work-img img {
     width: 100%;
     position: relative;
-    border-radius: 5px;
+    border-radius: var(--pad);
     margin: 5px;
     border: 1px solid #fff;
 }
@@ -418,12 +386,12 @@ a:hover {
     background: #fff;
     width: 90%;
     margin: 0 auto;
-    border-radius: 12px;
+    border-radius: var(--pad);
     gap: 4px;
     display: flex;
     padding: 10px 0;
     box-shadow: 0 0 40px #b4b4b4;
-    transition: all .3s ease;
+    transition: var(--trans);
 }
 
 .icons a {
@@ -448,10 +416,9 @@ a:hover {
 }
 
 .contact {
-    transition: all 0.3s ease;
-    padding-bottom: 10px;
-    background: linear-gradient(145deg, #ffffff49, #00000000, #00000000);
-    transition: all 0.3s ease;
+    padding-bottom: var(--pad);
+    background: var(--glass-gradient);
+    transition: var(--trans);
     text-align: center;
 }
 
@@ -468,9 +435,3 @@ footer {
 footer p {
     font-size: 16px;
 }
-
-/* button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25),
-              inset 0 1px 2px rgba(255,255,255,0.3);
-} */
