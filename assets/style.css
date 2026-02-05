@@ -319,9 +319,13 @@ a:hover {
     width: 100%;
     border-radius: 12px;
     padding: 3px 1px;
-    background: linear-gradient(90deg, #ffffff7c, #00000000, #00000000);
     margin: 15px auto;
     transition: all .3s ease;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .character {
@@ -329,11 +333,12 @@ a:hover {
     margin-left: 10%;
 }
 
-.character img {
+.measure img {
     width: auto;
-    height: 50px;
+    height: 60px;
     margin: 0;
-    margin-bottom: -10px;
+    display: inline;
+
 }
 
 .scale {
