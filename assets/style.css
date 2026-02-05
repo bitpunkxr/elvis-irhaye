@@ -321,11 +321,11 @@ a:hover {
     padding: 3px 1px;
     margin: 15px auto;
     transition: all .3s ease;
-    gap: 10px;
+    gap: 30%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .character {
@@ -335,10 +335,9 @@ a:hover {
 
 .measure img {
     width: auto;
-    height: 60px;
-    margin: 0;
+    height: 70px;
     display: inline;
-
+    margin-bottom: 40px;
 }
 
 .scale {
@@ -400,15 +399,15 @@ a:hover {
 .work-img {
     width: 100%;
     top: 0;
-    overflow-x: scroll;
     display: flex;
 }
 
 .work-img img {
-    width: 70%;
+    width: 100%;
     position: relative;
     border-radius: 5px;
     margin: 5px;
+    border: 1px solid #fff;
 }
 
 .work-txt {
