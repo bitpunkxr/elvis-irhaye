@@ -339,8 +339,9 @@ a:hover {
 }
 
 .skills-img img {
+    background: var(--glass-gradient);
     width: auto;
-    height: 70px;
+    height: 50px;
     display: inline;
     margin-bottom: 40px;
     border: var(--glass-border);
