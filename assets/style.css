@@ -302,19 +302,6 @@ a:hover {
     border-radius: 12px;
 }
 
-.project {
-    margin: 0 auto;
-    backdrop-filter: var(--bd-filter);
-    -webkit-backdrop-filter: var(--bd-filter);
-    border-radius: var(--b-radius);
-    color: var(--text);
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-shadow: var(--glass-shadow);
-    transition: var(--trans);
-    margin-bottom: 100px;
-}
-
 .skills {
     background: var(--glass-gradient);
     border-radius: var(--b-radius);
@@ -347,40 +334,6 @@ a:hover {
     border: var(--glass-border);
     padding: var(--pad);
     border-radius: var(--b-radius);
-}
-
-.work {
-    text-align: center;
-    width: 95%;
-    margin: 0 auto;
-    border-radius: var(--b-radius);
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-shadow: var(--glass-shadow);
-    transition: var(--trans);
-}
-
-.work h1 {
-    font-size: 1.8rem;
-}
-
-.work-img {
-    width: 100%;
-    top: 0;
-    display: flex;
-}
-
-.work-img img {
-    width: 100%;
-    position: relative;
-    border-radius: var(--pad);
-    margin: 5px;
-    border: 1px solid #fff;
-}
-
-.work-txt {
-    padding: 30px;
 }
 
 .icons {
