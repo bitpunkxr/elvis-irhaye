@@ -1,3 +1,16 @@
+:root {
+    --bg: #000;
+    --text: #adadad;
+    --glass-gradient: linear-gradient(145deg, #ffffff49, #00000000, #00000000, #ffffff17);
+    --secondary-gradient: linear-gradient(90deg, #ff7b00, #ffd000);
+    --bd-filter: blur(5px) saturate(150%) brightness(1.5);
+    --glass-border: 1px solid #ffffff49;
+    --b-radius: 12px;
+    --trans: all .3s ease;
+    --pad: 0.7rem;
+    --glass-shadow: 0 1px 2px rgba(0, 0, 0, 0.466);
+}
+
 @media (min-width: 1024px) {
     nav {
         display: none;
@@ -5,14 +18,14 @@
 
     .actual-menu {
         display: flex;
-        background: linear-gradient(145deg, #1d1d1d49, #ffffff1e, #ffffff1e, #1d1d1d49);
+        background: var(--glass-gradient);
         box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
         transition: all .3s ease;
         position: fixed;
         width: 100%;
         z-index: 1000;
-        backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: var(--bd-filter);
+        -webkit-backdrop-filter: var(--bd-filter);
     }
 
     .actual-menu ul {
@@ -84,7 +97,7 @@
         margin: 30px auto 30px 0;
         text-align: center;
         display: flex;
-        background: linear-gradient(90deg, #ffffff49, #00000000, #00000000);
+        background: var(--glass-gradient);
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
@@ -98,41 +111,22 @@
         justify-content: space-between;
     }
 
-    .about {
+    .mid {
         width: 40%;
         opacity: 0.8;
-        transition: all .3s ease;
+        transition: var(--trans);
     }
 
-    .about:hover {
+    .mid:hover {
         opacity: 1;
     }
 
-    .skills {
-        width: 40%;
-        opacity: 0.8;
-        transition: all .3s ease;
+    .mid-img {
+        gap: 40%;
     }
-
-    .skills:hover {
-        opacity: 1;
-    }
-
-    .measure {
-        width: 60%;
-    }
-
-    .measure:hover {
-        width: 90%;
-        color: #ff7b00;
-    }
-
-    .project {
-        width: 70%;
-    }
-
-    .work-img img {
-        width: 40%;
+    
+    .mid-img img {
+        height: 80px;
     }
 
     .icons img {
