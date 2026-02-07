@@ -12,6 +12,7 @@ body, html {
     --glass-gradient: linear-gradient(145deg, #ffffff49, #00000000, #00000000, #ffffff17);
     --secondary-gradient: linear-gradient(90deg, #ff7b00, #ffd000);
     --bd-filter: blur(5px) saturate(150%) brightness(1.5);
+    --thick-bd-filter: blur(45px) saturate(150%) brightness(1.5);
     --glass-border: 1px solid #ffffff49;
     --b-radius: 12px;
     --trans: all .3s ease;
@@ -22,10 +23,6 @@ body, html {
 body {
     color: var(--text);
     background: var(--bg);
-}
-
-h1, h2, h3, p {
-    font-weight: 300;
 }
 
 strong {
@@ -160,9 +157,10 @@ a:hover {
     text-align: center;
     font-size: 1.5rem;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.37); /* semi-transparent layer */
-    backdrop-filter: blur(45px);
-    -webkit-backdrop-filter: blur(45px); /* Safari support */
+    background: rgba(0, 0, 0, 0.37);
+    backdrop-filter: var(--thick-bd-filter);
+    -webkit-backdrop-filter: var(--thick-bd-filter);
+    -webkit-backdrop-filter: blur(45px);
     color: #fff;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -291,6 +289,7 @@ a:hover {
 .article p:nth-child(5) {
     text-align: right;
 }
+
 .article img {
     width: 100%;
     margin: 10px auto;
@@ -302,7 +301,7 @@ a:hover {
     border-radius: var(--b-radius);
     padding: 8px;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin: 100px auto 100px auto;
     border: var(--glass-border);
     width: 90%;
 }

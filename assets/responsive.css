@@ -4,6 +4,7 @@
     --glass-gradient: linear-gradient(145deg, #ffffff49, #00000000, #00000000, #ffffff17);
     --secondary-gradient: linear-gradient(90deg, #ff7b00, #ffd000);
     --bd-filter: blur(5px) saturate(150%) brightness(1.5);
+    --thick-bd-filter: blur(45px) saturate(150%) brightness(1.5);
     --glass-border: 1px solid #ffffff49;
     --b-radius: 12px;
     --trans: all .3s ease;
@@ -20,12 +21,13 @@
         display: flex;
         background: var(--glass-gradient);
         box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
-        transition: all .3s ease;
+        transition: var(--trans);
         position: fixed;
         width: 100%;
         z-index: 1000;
-        backdrop-filter: var(--bd-filter);
-        -webkit-backdrop-filter: var(--bd-filter);
+        backdrop-filter: var(--thick-bd-filter);
+        -webkit-backdrop-filter: var(--thick-bd-filter);
+        background: rgba(0, 0, 0, 0.37);
     }
 
     .actual-menu ul {
